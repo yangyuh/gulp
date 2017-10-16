@@ -1,11 +1,11 @@
 前端自动化构建工具gulp
-##全局安装gulp
+## 全局安装gulp
 全局安装gulp目的是为了通过她执行gulp任务；
 
     npm install gulp -g；
 命令提示符执行gulp -v，出现版本号即为正确安装。
 
-##新建项目文件
+## 新建项目文件
 
     npm init
 
@@ -13,7 +13,7 @@
 
 
 
-##如果npm install --save-dev gulp——sass失败
+## 如果npm install --save-dev gulp——sass失败
 1、首先全局环境下配置淘宝镜像（注意：这里是全局环境，不是项目根目录）执行语句：
     
     npm install -g cnpm --registry=https://registry.npm.taobao.org
