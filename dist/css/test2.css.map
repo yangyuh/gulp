@@ -1,1 +1,0 @@
-{"version":3,"sources":["test2.scss"],"names":[],"mappings":"AAEA;EACC,YAAU;CACV;;AACD;EACI,YANQ;EAOR,WANO;CAOV","file":"test2.css","sourcesContent":["$width: 100%;\r\n$color: red;\r\nbody{\r\n\tcolor:#000;\r\n}\r\nh1{\r\n    width:$width;\r\n    color: $color;\r\n}\r\n"]}

@@ -1,1 +1,0 @@
-{"version":3,"sources":["test1.scss"],"names":[],"mappings":"AACA;EACI,iBAFa;CAGhB","file":"test1.css","sourcesContent":["$background: #ddd;\r\ndiv{\r\n    background:$background;\r\n}"]}
