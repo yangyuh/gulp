@@ -120,8 +120,8 @@ gulp.task('createSrcDir', function() {
         srcImage = './src/img/', //图片源文件目录
         srcFont = './src/fonts/', //字体图标源文件目录
         srcComp = './src/comp/', //组件文件源文件目录
-        srcLib = './src/lib/', //组件文件源文件目录
-        var dirs = [srcJS, srcCSS, srcFont, srcImage, srcComp, srcHtml, srcLib];
+        srcLib = './src/lib/'; //组件文件源文件目录
+    var dirs = [srcJS, srcCSS, srcFont, srcImage, srcComp, srcHtml, srcLib];
     // 生成项目结构
     dirs.forEach(dir => {
         mkdirp.sync(dir);
