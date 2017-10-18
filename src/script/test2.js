@@ -1,5 +1,3 @@
-"use strict";
-
 // import Animal from "./animal"
 // class Dog extends Animal{
 //   constructor(){
@@ -10,5 +8,4 @@
 
 // var dog = new Dog();
 // dog.sayHello();
-console.log(222222222222);
-//# sourceMappingURL=test2.js.map
+console.log(222222222222)

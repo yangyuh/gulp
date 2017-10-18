@@ -1,5 +1,3 @@
-"use strict";
-
 // class Animal{
 //   constructor(){
 //     console.log("==constructor animal==");
@@ -10,5 +8,4 @@
 // }
 
 // export default Animal;
-console.log(11112222);
-//# sourceMappingURL=test1.js.map
+console.log(11112222)

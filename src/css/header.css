@@ -1,0 +1,42 @@
+.header {
+  background: #000;
+}
+
+.header ul {
+  overflow: hidden;
+}
+
+.header ul li {
+  float: left;
+  line-height: 80px;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.header ul li a {
+  color: #fff;
+}
+
+.header ul li:hover {
+  background: #fff;
+}
+
+.header ul li:hover a {
+  color: #000;
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 40px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/*# sourceMappingURL=header.css.map */
