@@ -1,9 +1,18 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync'; 
+import browserSync from 'browser-sync';
 
 const plugins = gulpLoadPlugins();
 const reload = browserSync.reload;
+
+// ejs模板引擎
+gulp.task('ejs', function() {
+    return gulp.src("./templates/*.ejs")
+        .pipe(plugins.ejs({
+            msg: "Hello Gulp!"
+        }))
+        .pipe(gulp.dest("dist"))
+});
 
 // 删除dist文件夹  
 gulp.task('clean', function() {
@@ -25,7 +34,7 @@ gulp.task('sass', () => {
             precision: 10, //保留小数点后几位
             includePaths: ['.']
         }).on('error', plugins.sass.logError))
-        .pipe(plugins.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] })) 
+        .pipe(plugins.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
         .pipe(plugins.sourcemaps.write('.')) //map文件命名
         .pipe(gulp.dest('src/css')) //指定输出路径
         .pipe(browserSync.stream());
@@ -36,7 +45,7 @@ gulp.task('scripts', () => {
     return gulp.src('src/script/**/*.js')
         .pipe(plugins.plumber())
         .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.babel()) 
+        .pipe(plugins.babel())
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest('src/js'))
         .pipe(browserSync.stream())
@@ -68,12 +77,12 @@ gulp.task('html', ['sass', 'scripts', 'images'], () => { //先执行sass scripts
     return gulp.src('src/*.html')
         .pipe(plugins.plumber())
         //将页面上 <!--endbuild--> 根据上下顺序合并
-        .pipe(plugins.useref({ searchPath: ['src', '.'] })) 
+        .pipe(plugins.useref({ searchPath: ['src', '.'] }))
         .pipe(plugins.if('*.js', plugins.uglify()))
         .pipe(plugins.if('*.css', plugins.cssnano()))
         .pipe(plugins.if('*.html', plugins.htmlmin(options)))
         //这种方法比较不成熟 每一次的任务都会改变，不管文件是否被修改 
-        .pipe(plugins.replace('.js"></script>', '.js?v=' + version + '"></script>')) 
+        .pipe(plugins.replace('.js"></script>', '.js?v=' + version + '"></script>'))
         .pipe(plugins.replace('.css">', '.css?v=' + version + '">'))
         .pipe(gulp.dest('dist'));
 });
@@ -82,13 +91,13 @@ gulp.task('html', ['sass', 'scripts', 'images'], () => { //先执行sass scripts
 gulp.task('serve', ['sass', 'scripts'], () => {
     browserSync({
         notify: false,
-        port: 8080, 
+        port: 8080,
         server: {
-            baseDir: ['src'] 
+            baseDir: ['src']
         }
     });
     //监测文件变化 实行重新加载
-    gulp.watch([ 
+    gulp.watch([
         'src/*.html',
         'src/img/**/*',
     ]).on('change', reload);
