@@ -13,6 +13,8 @@ src
     -lib 插件
     -sass css源文件
     -script js源文件
+    -templates html源文件
+        -public 公共部分html片段
 
 ## 删除dist文件夹，zip文件
     gulp clean   

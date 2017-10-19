@@ -1,17 +1,25 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
-
+var fileinclude  = require('gulp-file-include');
 const plugins = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 // ejs模板引擎
 gulp.task('ejs', function() {
-    return gulp.src("./templates/*.ejs")
-        .pipe(plugins.ejs({
-            msg: "Hello Gulp!"
+    gulp.src('src/templates/**.ejs')
+        .pipe(plugins.ejs())
+    .pipe(gulp.dest('dist'));
+});
+
+// fileinclude
+gulp.task('fileinclude', function() {
+    gulp.src('src/templates/**.html')
+        .pipe(fileinclude({
+          prefix: '@@',
+          basepath: '@file'
         }))
-        .pipe(gulp.dest("dist"))
+    .pipe(gulp.dest('src'));
 });
 
 // 删除dist文件夹  
@@ -104,6 +112,8 @@ gulp.task('serve', ['sass', 'scripts'], () => {
     //监测变化 执行sass任务
     gulp.watch('src/sass/**/*.scss', ['sass']);
     gulp.watch('src/script/**/*.js', ['scripts']);
+    gulp.watch('src/templates/**/*', ['fileinclude']);
+
 });
 
 // 打包任务

@@ -10,5 +10,5 @@
 // }
 
 // export default Animal;
-console.log(11112222);
+console.log(11112222333);
 //# sourceMappingURL=test1.js.map

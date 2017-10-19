@@ -19,13 +19,7 @@
 
 <body>
     <div class="container">
-        <div class="header">
-    <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="../test.html">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</div>
+        @@include('public/header.html')
         <div class="jumbotron">
             <h1>Hello Gulp!</h1>
             <p class="lead">Always a pleasure scaffolding your apps.</p>
@@ -43,9 +37,7 @@
                 <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
             </div>
         </div>
-        <div class="footer">
-    <p>@yangyh</p>
-</div>
+        @@include('public/footer.html')
     </div>
     <!-- build:js js/index.js -->
     <script src="js/test1.js"></script>
