@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp serve",
-    "build": "gulp build"
+    "build": "gulp",
+    "create": "gulp createSrcDir"
   },
   "author": "",
   "license": "ISC",
@@ -30,11 +31,13 @@
     "gulp-plumber": "^1.1.0",
     "gulp-replace": "^0.6.1",
     "gulp-rev-append": "^0.1.8",
+    "gulp-run-sequence": "^0.3.2",
     "gulp-sass": "^3.1.0",
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.1.2",
+    "gulp-zip": "^4.0.0",
     "main-bower-files": "^2.13.1",
     "wiredep": "^4.0.0"
   },
